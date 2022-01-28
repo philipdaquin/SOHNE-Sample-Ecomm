@@ -123,11 +123,11 @@ impl Component for Home {
 
         html! {
             <div class="home">
-                <img class="profile-picture" src="assets/images/avatar.jpg" alt="ShironCat's avatar" />
+                <img class="profile-picture" src="assets/img/imghome.png" alt="" />
                 <h1>{ "Hello, World!" }</h1>
                 <span>{products}</span>
                 <span>{format!("Cart Value: {:.2}", cart)}</span>
-                <span>{format!("Quantity: {0}", quantity)}</span>
+                <span>{format!("Quantity: {}", quantity)}</span>
 
             </div>
         }
