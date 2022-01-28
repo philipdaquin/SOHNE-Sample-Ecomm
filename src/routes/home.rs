@@ -113,7 +113,13 @@ impl Component for Home {
             .cart_products
             .iter()
             .fold(0.0, |total, cart| total + (cart.quantity as f64 * cart.product.price));
-
+        let quantity = self
+            .state
+            .cart_products
+            .iter()
+            .fold(0, |total, cart| {
+                cart.quantity + total
+            });
 
         html! {
             <div class="home">
@@ -121,6 +127,7 @@ impl Component for Home {
                 <h1>{ "Hello, World!" }</h1>
                 <span>{products}</span>
                 <span>{format!("Cart Value: {:.2}", cart)}</span>
+                <span>{format!("Quantity: {0}", quantity)}</span>
 
             </div>
         }
