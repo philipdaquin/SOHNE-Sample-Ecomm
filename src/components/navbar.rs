@@ -38,6 +38,9 @@ impl Component for Navbar {
         html! {
             <>
             <header class="navbar">
+                <nav class="nav bd-grid">
+                    <div class="nav__toggle"></div>
+                </nav>
                 <ul>
                     <li>
                         <RouterAnchor<AppRoute> route=AppRoute::Home><a>{"Home"}</a></RouterAnchor<AppRoute>>
