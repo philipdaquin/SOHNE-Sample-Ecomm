@@ -39,16 +39,22 @@ impl Component for Navbar {
             <>
             <header class="navbar">
                 <nav class="nav bd-grid">
-                    <div class="nav__toggle"></div>
+                    <div class="nav__toggle" id="nav-toggle">
+                        <i class="bx bxs-grid"></i>
+                    </div>
+                    <a href="#" class="nav__logo">{"SOHNE"}</a>
                 </nav>
-                <ul>
-                    <li>
-                        <RouterAnchor<AppRoute> route=AppRoute::Home><a>{"Home"}</a></RouterAnchor<AppRoute>>
-                    </li>
-                    <li>
-                        <RouterAnchor<AppRoute> route=AppRoute::About><a>{"Blog"}</a></RouterAnchor<AppRoute>>
-                    </li>
-                </ul>
+                <div class="nav__menu" id="nav-menu">
+                    <ul class="nav__list">
+                        <li class="nav__item"><RouterAnchor<AppRoute> route=AppRoute::Home classes="nav__link"><a>{"Home"}</a></RouterAnchor<AppRoute>></li>
+                        <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::About><a>{"About"}</a></RouterAnchor<AppRoute>></li>
+                        <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::Feature><a>{"Feature"}</a></RouterAnchor<AppRoute>></li>
+                        <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::Men><a>{"Men"}</a></RouterAnchor<AppRoute>></li>
+                        <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::Women><a>{"Women"}</a></RouterAnchor<AppRoute>></li>
+                        <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::New><a>{"New"}</a></RouterAnchor<AppRoute>></li>
+                        <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::Shop><a>{"Shop"}</a></RouterAnchor<AppRoute>></li>
+                    </ul>
+                </div>
             </header>
             </>
         }

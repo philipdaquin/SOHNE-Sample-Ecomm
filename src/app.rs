@@ -1,4 +1,12 @@
-use crate::routes::{about::About, home::Home, AppRoute};
+use crate::routes::{
+    about::About, 
+    home::Home, 
+    feature::Feature,
+    men::Men,
+    women::Women,
+    new::New,
+    shop::Shop,
+    AppRoute};
 use crate::components::{ navbar::Navbar, footer::Footer, };
 
 
@@ -33,6 +41,11 @@ impl Component for Main {
                             match switch {
                                 AppRoute::Home => html!{ <Home/> },
                                 AppRoute::About => html!{ <About/> },
+                                AppRoute::Feature => html!{ <Feature/> },
+                                AppRoute::Men => html!{ <Men/> },
+                                AppRoute::Women => html!{ <Women/> },
+                                AppRoute::New => html!{ <New/> },
+                                AppRoute::Shop => html!{ <Shop/> },
                             }
                         })
                     />
