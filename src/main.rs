@@ -1,7 +1,7 @@
 mod app;
 mod routes;
 mod components;
-
+pub mod types;
 
 use crate::app::Main;
 

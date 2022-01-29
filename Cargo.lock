@@ -85,7 +85,9 @@ dependencies = [
 name = "cosi_cosi"
 version = "0.1.0"
 dependencies = [
+ "anyhow",
  "js-sys",
+ "serde",
  "wasm-bindgen",
  "wasm-logger",
  "web-sys",
