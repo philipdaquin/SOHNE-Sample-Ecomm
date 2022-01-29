@@ -35,16 +35,18 @@ impl Component for Navbar {
     }
 
     fn view(&self) -> Html {
+        let show_menu = if !self.is_active {"nav__menu show"} else {"nav__menu"};
+        
         html! {
             <>
-            <header class="navbar">
+            <header class="l-header" id="header">
                 <nav class="nav bd-grid">
-                    <div class="nav__toggle" id="nav-toggle">
-                        <i class="bx bxs-grid"></i>
-                    </div>
-                    <a href="#" class="nav__logo">{"SOHNE"}</a>
-                </nav>
-                <div class="nav__menu" id="nav-menu">
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="bx bxs-grid"></i>
+                </div>
+                <a href="#" class="nav__logo">{"SOHNE"}</a>
+                    
+                <div class={show_menu} id="nav-menu">
                     <ul class="nav__list">
                         <li class="nav__item"><RouterAnchor<AppRoute> route=AppRoute::Home classes="nav__link"><a>{"Home"}</a></RouterAnchor<AppRoute>></li>
                         <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::About><a>{"About"}</a></RouterAnchor<AppRoute>></li>
@@ -55,6 +57,10 @@ impl Component for Navbar {
                         <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::Shop><a>{"Shop"}</a></RouterAnchor<AppRoute>></li>
                     </ul>
                 </div>
+                <div class="nav__shop">
+                    <i class="bx bx-shopping-bag"></i>
+                </div>
+                </nav>
             </header>
             </>
         }
