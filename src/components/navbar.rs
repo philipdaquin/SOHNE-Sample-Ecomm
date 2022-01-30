@@ -47,7 +47,7 @@ impl Component for Navbar {
                 <RouterAnchor<AppRoute> route=AppRoute::Home classes="nav__logo"><a>{"SOHNE"}</a></RouterAnchor<AppRoute>>
                 <div class={show_menu} id="nav-menu">
                     <ul class="nav__list">
-                        <li class="nav__item"><RouterAnchor<AppRoute> route=AppRoute::Home classes="nav__link"><a>{"Home"}</a></RouterAnchor<AppRoute>></li>
+                        <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::Home classes="nav__link"><a>{"Home"}</a></RouterAnchor<AppRoute>></li>
                         <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::About><a>{"About"}</a></RouterAnchor<AppRoute>></li>
                         <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::Feature><a>{"Feature"}</a></RouterAnchor<AppRoute>></li>
                         <li class="nav__item"> <RouterAnchor<AppRoute> route=AppRoute::Men><a>{"Men"}</a></RouterAnchor<AppRoute>></li>
