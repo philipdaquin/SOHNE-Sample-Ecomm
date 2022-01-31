@@ -1,7 +1,13 @@
+// Yew Fetch Services
+use crate::api;
+use crate::types::{AddToCart, Product};
+use anyhow::Error;
+use yew::format::Json;
+use yew::services::fetch::FetchTask;
 
 use yew::prelude::*;
-use crate::types::{Product, AddToCart};
-
+/// The state object is where you store property vlaues that belongs to that component
+/// When the state object changes, the components re-renders 
 struct State { 
     products: Vec<Product>,
     cart_products: Vec<AddToCart>
@@ -11,6 +17,7 @@ pub enum Msg {
 }
 /// ComponentLinks: Help us create CallBack functions which allows us to change a piece of the state
 /// that is part of the parent component. it a Child-to-Parent communication
+/// This allows us to register calbacks that can trigger our update lifecycle method 
 pub struct Home { 
     state: State,
     _link: ComponentLink<Self>
@@ -19,6 +26,7 @@ pub struct Home {
 impl Component for Home {
     type Message = Msg;
     type Properties = ();
+    //  The Products are queries using the fetch API
 
     fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
         let products: Vec<Product> = vec![
@@ -44,6 +52,9 @@ impl Component for Home {
     ///  The communication between components happens primarly through Messages 
     ///  This allows the component to update itself based on what the based messaged was and rerednered 
     ///  itself
+    /// ----------------------
+    ///  When the presses the Button Add To Cart, we trigger a Msg::AddToCart message to update
+    /// If the product doesnt exist, this product is still added to the cart or it increments the quantity
     fn update(&mut self, _msg: Self::Message) -> ShouldRender {
         match _msg { 
             //  Find the product_id from the product list
@@ -68,7 +79,10 @@ impl Component for Home {
                         quantity: 1
                     })
                 }
+                // When we return True,  component is re-rendered.
                 true
+
+                
             },
         }
     }
