@@ -10,17 +10,23 @@ use yew::prelude::*;
 /// When the state object changes, the components re-renders 
 struct State { 
     products: Vec<Product>,
-    cart_products: Vec<AddToCart>
+    cart_products: Vec<AddToCart>,
+    fetch_products_error: Option<Error>,
+    fetch_products: bool,
 }
 pub enum Msg { 
-    AddToCart(i32)
+    AddToCart(i32),
+    FetchProducts,
+    FetchProductsOk, 
+    FetchProductsErr(Error)
 }
 /// ComponentLinks: Help us create CallBack functions which allows us to change a piece of the state
 /// that is part of the parent component. it a Child-to-Parent communication
-/// This allows us to register calbacks that can trigger our update lifecycle method 
+/// This allows us to register callbacks that can trigger our update lifecycle method 
 pub struct Home { 
     state: State,
-    _link: ComponentLink<Self>
+    _link: ComponentLink<Self>,
+    task: Option<FetchTask>,
 }
 
 impl Component for Home {
@@ -29,24 +35,20 @@ impl Component for Home {
     //  The Products are queries using the fetch API
 
     fn create(_props: Self::Properties, _link: ComponentLink<Self>) -> Self {
-        let products: Vec<Product> = vec![
-            Product { 
-                id: 1,
-                name: "Nike Jordan".to_string(),
-                description: "Nike Jordan".to_string(),
-                image: "/assets/img/featured1.png".to_string(),
-                price: 149.99
-            }
-
-        ];
-        let cart_products: Vec<AddToCart> = vec![];
+        let products = vec![];
+        let cart_products = vec![];
+        //  Send_Message - Send a message to a component
+        _link.send_message(Msg::FetchProducts);
         
         Self { 
             state: State { 
                 products,
-                cart_products
+                cart_products,
+                fetch_products_error: None,
+                fetch_products: false,
             },
-            _link
+            _link,
+            task: None
         }
     }
     ///  The communication between components happens primarly through Messages 
@@ -81,8 +83,6 @@ impl Component for Home {
                 }
                 // When we return True,  component is re-rendered.
                 true
-
-                
             },
         }
     }
