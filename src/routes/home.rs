@@ -17,7 +17,7 @@ struct State {
 pub enum Msg { 
     AddToCart(i32),
     FetchProducts,
-    FetchProductsOk, 
+    FetchProductsOk(Vec<Product>), 
     FetchProductsErr(Error)
 }
 /// ComponentLinks: Help us create CallBack functions which allows us to change a piece of the state
@@ -58,6 +58,7 @@ impl Component for Home {
     ///  When the presses the Button Add To Cart, we trigger a Msg::AddToCart message to update
     /// If the product doesnt exist, this product is still added to the cart or it increments the quantity
     fn update(&mut self, _msg: Self::Message) -> ShouldRender {
+        
         match _msg { 
             //  Find the product_id from the product list
             Msg::AddToCart(id) => { 
@@ -84,6 +85,29 @@ impl Component for Home {
                 // When we return True,  component is re-rendered.
                 true
             },
+            Msg::FetchProducts => { 
+                self.state.fetch_products = false;
+                let handler = self
+                    ._link
+                    .callback(move |response: api::FetchResponse<Vec<Product>>| { 
+                        let (s, Json(data)) = response.into_parts();
+                        match data { 
+                            Ok(product) => Msg::FetchProductsOk(product),
+                            Err(error) => Msg::FetchProductsErr(error),
+                        }
+                    });
+                true 
+            },
+            Msg::FetchProductsOk(products) => { 
+                self.state.products = products;
+                self.state.fetch_products = true;
+                true
+            },
+            Msg::FetchProductsErr(error) => { 
+                self.state.fetch_products_error = Some(error);
+                self.state.fetch_products = true;
+                true
+            }
         }
     }
 
@@ -118,12 +142,32 @@ impl Component for Home {
                 cart.quantity + total
             });
 
+       let product_render =  if !self.state.fetch_products { 
+           html! { <div>{"Loading..."}</div>}
+        } else if let Some(_) = self.state.fetch_products_error { 
+            return html! { 
+                <div>
+                    <span>{"Error loading products!"}</span>
+                </div>
+            }
+        } else { 
+            html! {
+               
+              }
+        };
+
+
+
+
+
         html! {
             <>
             <div class="home">
                 <img class="profile-picture" src="assets/img/imghome.png" alt="" />
                 <h1>{ "Hello, World!" }</h1>
                 <span>{products}</span>
+                <span>{product_render}</span>
+
                 <span>{format!("Cart Value: {:.2}", cart)}</span>
                 <span>{format!("Quantity: {}", quantity)}</span>
 
