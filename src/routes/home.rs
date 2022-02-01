@@ -155,15 +155,147 @@ impl Component for Home {
         } else { 
             html! {
                 <>
-                <div class="home">
-                    <img class="profile-picture" src="assets/img/imghome.png" alt="" />
-                    <h1>{ "Hello, World!" }</h1>
-                    <span>{products}</span>
-                    <span>{format!("Cart Value: {:.2}", cart)}</span>
-                    <span>{format!("Quantity: {}", quantity)}</span>
+                <section class="home" id="home">
+                    <div class="home__container  bd-grid">
+                        <div class="home__sneaker">
+                            <div class="home__shape">
+                                <img src="assets/img/imghome.png" alt="" class="home__img"/>
+                            </div>
+                            <div class="home__data">
+                                <span class="home__new">{"New in"}</span>
+                                <h1 class="home__title">{"YEEZY BOOST "}<br/>{" SPLY - 350<"}</h1>
+                                <p class="home__description">{"Explore the new collections of sneakers"}</p>
+                                <a href="#" class="button">{"Explore Now"}</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="featured section" id="featured">
+                    <h2 class="section-title">{"FEATURED"}</h2>
+                    <div class="featured__container bd-grid">
+                        <article class="sneaker">
+                            <div class="sneaker__sale">{"Sale"}</div>
+                            <img src="assets/img/featured1.png" alt="" class="sneaker__img"/>
+                            <span class="sneaker__name">{"Nike Jordan"}</span>
+                            <span class="sneaker__preci">{"$149.99"}</span>
+                            <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                        </article>
+
+                        <article class="sneaker">
+                            <div class="sneaker__sale">{"Sale"}</div>
+                            <img src="assets/img/featured2.png" alt="" class="sneaker__img"/>
+                            <span class="sneaker__name">{"Nike Free RN"}</span>
+                            <span class="sneaker__preci">{"$149.99"}</span>
+                            <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                        </article>
+
+                        <article class="sneaker">
+                            <div class="sneaker__sale">{"Sale"}</div>
+                            <img src="assets/img/featured3.png" alt="" class="sneaker__img"/>
+                            <span class="sneaker__name">{"Nike Free RN"}</span>
+                            <span class="sneaker__preci">{"$149.99"}</span>
+                            <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                        </article>
+                    </div>
+                </section>
+                <section class="collection section">
+                    <div class="collection__container bd-grid">
+                        <div class="collection__card">
+                            <div class="collection__data">
+                                <h3 class="collection__name">{"Nike"}</h3>
+                                <p class="collection__description">{"New Collection 2020"}</p>
+                                <a href="#" class="button-light">{"Buy Now"}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                            </div>
+                            <img src="assets/img/collection1.png" alt="" class="collection__img"/>
+                        </div>
+
+                        <div class="collection__card">
+                            <div class="collection__data">
+                                <h3 class="collection__name">{"Adidas"}</h3>
+                                <p class="collection__description">{"New Collection 2020"}</p>
+                                <a href="#" class="button-light">{"Buy Now"}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                            </div>
+                            <img src="assets/img/collection2.png" alt="" class="collection__img"/>
+                        </div>
+
+                        <div class="collection__card">
+                            <div class="collection__data">
+                                <h3 class="collection__name">{"Name"}</h3>
+                                <p class="collection__description">{"New Collection 2020"}</p>
+                                <a href="#" class="button-light">{"Buy Now"}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                            </div>
+                            <img src="assets/img/collection1.png" alt="" class="collection__img"/>
+                        </div>
+                    </div>
+                </section>
+                <section class="women section" id="women">
+                    <h2 class="section-title"> {"WOMEN SNEAKERS"}</h2>
+                    <div class="women__container bd-grid">
+                        <article class="sneaker">
+                            <img src="assets/img/women1.png" alt="" class="sneaker__img"/>
+                            <span class="sneaker__name">{"Nike Free TN"}</span>
+                            <span class="sneaker__preci">{"$129.99"}</span>
+                            <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                        </article>
+
+                        <article class="sneaker ">
+                            <img src="assets/img/women2.png" alt="" class="sneaker__img"/>
+                            <span class="sneaker__name">{"Nike Free TR"}</span>
+                            <span class="sneaker__preci">{"$129.99"}</span>
+                            <a href="" class="button-light">{"Add to Cart"} <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                        </article>
+
+                        <article class="sneaker">
+                            <img src="assets/img/women3.png" alt="" class="sneaker__img"/>
+                            <span class="sneaker__name">{"Nike GS Pink"}</span>
+                            <span class="sneaker__preci">{"$129.99"}</span>
+                            <a href="" class="button-light">{"Add to Cart"} <i class="bx bx-right-arrow-alt button-icon"></i></a>
+                        </article>
+
+                        <article class="sneaker">
+                            <img src="assets/img/women1.png" alt="" class="sneaker__img"/>
+                            <span class="sneaker__name">{"Nike Get5"}</span>
+                            <span class="sneaker__preci">{"$129.99"}</span>
+                            <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                        </article>
+                    </div>
+                </section>
+                <section class="offer section">
+                    <div class="offer__container bd-grid">
+                        <div class="offer__data">
+                            <h3 class="offer__title">{"50%"}</h3>
+                            <p class="offer__description">{"in Adidas Superstar sneakers"}</p>
+                            <a href="#" class="button">{"Shop Now"}</a>
+                        </div>
+                        <img src="assets/img/offert.png" alt="" class="offer__img"/>            
+                    </div>
+                </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                // <div class="home">
+                //     <img class="profile-picture" src="assets/img/imghome.png" alt="" />
+                //     <h1>{ "Hello, World!" }</h1>
+                //     <span>{products}</span>
+                //     <span>{format!("Cart Value: {:.2}", cart)}</span>
+                //     <span>{format!("Quantity: {}", quantity)}</span>
     
-                </div>
-                <script crossorigin="true" src="assets/js/main.js"></script>
+                // </div>
+                <script src="assets/js/main.js"></script>
                 </>
             }
         }

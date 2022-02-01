@@ -35,7 +35,7 @@ impl Component for Main {
         html! {
             <>
                 <Navbar/>
-                <main class="main">
+                <main class="l-main">
                     <Router<AppRoute, ()>
                         render = Router::render(|switch: AppRoute| {
                             match switch {
