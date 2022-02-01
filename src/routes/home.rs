@@ -96,6 +96,7 @@ impl Component for Home {
                             Err(error) => Msg::FetchProductsErr(error),
                         }
                     });
+                    self.task = Some(api::get_products(handler));
                 true 
             },
             Msg::FetchProductsOk(products) => { 
@@ -141,8 +142,9 @@ impl Component for Home {
             .fold(0, |total, cart| {
                 cart.quantity + total
             });
-
-       let product_render =  if !self.state.fetch_products { 
+        
+        
+        if !self.state.fetch_products { 
            html! { <div>{"Loading..."}</div>}
         } else if let Some(_) = self.state.fetch_products_error { 
             return html! { 
@@ -152,27 +154,19 @@ impl Component for Home {
             }
         } else { 
             html! {
-               
-              }
-        };
-
-
-
-
-
-        html! {
-            <>
-            <div class="home">
-                <img class="profile-picture" src="assets/img/imghome.png" alt="" />
-                <h1>{ "Hello, World!" }</h1>
-                <span>{products}</span>
-                <span>{product_render}</span>
-
-                <span>{format!("Cart Value: {:.2}", cart)}</span>
-                <span>{format!("Quantity: {}", quantity)}</span>
-
-            </div>
-            </>
+                <>
+                <div class="home">
+                    <img class="profile-picture" src="assets/img/imghome.png" alt="" />
+                    <h1>{ "Hello, World!" }</h1>
+                    <span>{products}</span>
+                    <span>{format!("Cart Value: {:.2}", cart)}</span>
+                    <span>{format!("Quantity: {}", quantity)}</span>
+    
+                </div>
+                <script crossorigin="true" src="assets/js/main.js"></script>
+                </>
+            }
         }
+        
     }
 }

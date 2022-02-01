@@ -4,7 +4,7 @@
         "id": 1,
         "name": "Nike Jordan",
         "description": "Nike Jordan",
-        "image": "/assets/img/featured1/png",
+        "image": "assets/img/featured1.png",
         "price": 149.99
     }
 ]
