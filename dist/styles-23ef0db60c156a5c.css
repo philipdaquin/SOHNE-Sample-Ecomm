@@ -398,10 +398,74 @@ img {
 .new__sneaker-overlay { 
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -100%;
   width: 100%; 
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(138, 138, 138, 0.3);
+  transition: .3s;
+}
+.new__sneaker-card:hover .new__sneaker-overlay { 
+  bottom: 0;
+}
+.newsletter__container { 
+  background-color: var(--dark-color);
+  color: var(--white-color);
+  padding: 2rem .5rem;
+  border-radius: .5rem;
+  text-align: center;
+}
+.newsletter__title { 
+  font-size: var(--bigger-font-size);
+  margin-bottom: var(--mb-2);
+}
+.newsletter__description   { 
+  margin-bottom: var(--mb-5);
+}
+.newsletter__subscribe { 
+  display: flex;
+  column-gap: .5rem;
+  background-color: var(--white-color);
+  padding: .5rem;
+  border-radius: .5rem;
+
+}
+.newsletter__input { 
+  outline: none;
+  border: none;
+  width: 90%;
+  font-size: var(--normal-font-size);
+}
+
+.newsletter__input::placeholder { 
+  color: var(--dark-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi-bold);
+}
+.footer__container { 
+  grid-template-columns: repeat(auto-fix, minmax(220px, 1fr));
+}
+.footer__box { 
+  margin-bottom: var(--mb-4);
+}
+.footer__title { 
+  font-size: var(--big-font-size);
+}
+.footer__link { 
+  display: block;
+  width: max-content;
+  margin-bottom: var(--mb-1);
+}
+.footer__social { 
+  font-size: 1.5rem;
+  margin-right: 1.25rem;
+}
+.footer__copy { 
+  padding-top: 3re,;
+  font-size: var(--smaller-font-size);
+  color: var(--dark-color-light);
+  text-align: center;
 }
