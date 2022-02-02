@@ -37,7 +37,7 @@ impl Component for Footer {
                             <li><a href="#home" class="footer__link">{"Home"}</a></li>
                             <li><a href="#featured" class="footer__link">{"Featured"}</a></li>
                             <li><a href="#women" class="footer__link">{"Women"}</a></li>
-                            <li><a href="#new" class="footer__link">{"new"}</a></li>
+                            <li><a href="#new" class="footer__link">{"New"}</a></li>
                         </ul>
                     </p>
                 </div>

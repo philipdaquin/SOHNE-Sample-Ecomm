@@ -1,5 +1,6 @@
 use yew::prelude::*;
-
+use crate::components::{
+    footer::Footer, navbar::Navbar};
 pub struct ProductPage;
 
 impl Component for ProductPage {
@@ -20,7 +21,11 @@ impl Component for ProductPage {
 
     fn view(&self) -> Html {
         html! {
-            <></>
+            <>  
+            <Navbar/>
+            
+            <Footer/>
+            </>
         }
     }
 }

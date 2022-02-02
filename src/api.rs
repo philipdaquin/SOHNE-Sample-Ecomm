@@ -14,3 +14,11 @@ pub fn get_products(callback: FetchCallBack<Vec<Product>>) -> FetchTask {
     FetchService::fetch(req, callback)
         .expect("Could Not Fetch Items")
 }
+
+pub fn get_product(id: i32, callback: FetchCallBack<Product>) -> FetchTask { 
+    let req = Request::get(format!("/assets/img/{}.json", id))
+    .body(Nothing)
+    .unwrap();
+    FetchService::fetch(req, callback)
+    .expect("Could Not Fetch Items")
+}

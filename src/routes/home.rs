@@ -328,31 +328,6 @@ impl Component for Home {
                         </form>
                     </div>
                 </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                // <div class="home">
-                //     <img class="profile-picture" src="assets/img/imghome.png" alt="" />
-                //     <h1>{ "Hello, World!" }</h1>
-                //     <span>{products}</span>
-                //     <span>{format!("Cart Value: {:.2}", cart)}</span>
-                //     <span>{format!("Quantity: {}", quantity)}</span>
-    
-                // </div>
                 <script src="assets/js/main.js"></script>
                 </>
             }
