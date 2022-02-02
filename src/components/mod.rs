@@ -1,4 +1,4 @@
 pub mod navbar;
 pub mod footer;
 pub mod header;
-pub mod product_card;
+pub mod featured_products;

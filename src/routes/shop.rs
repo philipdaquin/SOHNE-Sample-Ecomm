@@ -1,5 +1,6 @@
 use yew::prelude::*;
 
+
 pub struct Shop;
 
 impl Component for Shop {
@@ -11,7 +12,7 @@ impl Component for Shop {
     }
 
     fn update(&mut self, _msg: Self::Message) -> ShouldRender {
-        unimplemented!()
+        true
     }
 
     fn change(&mut self, _props: Self::Properties) -> ShouldRender {
@@ -19,26 +20,20 @@ impl Component for Shop {
     }
 
     fn view(&self) -> Html {
+        
         html! {
             <>
+           
             <main class="l-main">
                 <section class="featured section" id="shop">
                 <h2 class="section-title">{"All Products"}</h2>
                 <div class="featured__container bd-grid">
-                    <article class="sneaker">
-                        <img src="assets/img/featured1.png" alt="" class="sneaker__img"/>
-                        <span class="sneaker__name">{"Nike Jordan"}</span>
-                        <span class="sneaker__preci">{"$149.99"}</span>
-                        <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
-                    </article>
-
                     <article class="sneaker">
                         <img src="assets/img/featured2.png" alt="" class="sneaker__img"/>
                         <span class="sneaker__name">{"Nike Free RN"}</span>
                         <span class="sneaker__preci">{"$149.99"}</span>
                         <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
                     </article>
-
                     <article class="sneaker">
                         <img src="assets/img/featured3.png" alt="" class="sneaker__img"/>
                         <span class="sneaker__name">{"Nike Free RN"}</span>

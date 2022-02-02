@@ -44,6 +44,7 @@ impl Component for Navbar {
                 <div class="nav__toggle" id="nav-toggle">
                     <i class="bx bxs-grid"></i>
                 </div>
+
                 <RouterAnchor<AppRoute> route=AppRoute::Home classes="nav__logo"><a>{"SOHNE"}</a></RouterAnchor<AppRoute>>
                 <div class={show_menu} id="nav-menu">
                     <ul class="nav__list">

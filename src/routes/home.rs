@@ -4,11 +4,12 @@ use crate::types::{AddToCart, Product};
 use anyhow::Error;
 use yew::format::Json;
 use yew::services::fetch::FetchTask;
+use crate::components::{featured_products::Featured};
 
 use yew::prelude::*;
 /// The state object is where you store property vlaues that belongs to that component
 /// When the state object changes, the components re-renders 
-struct State { 
+pub struct State { 
     products: Vec<Product>,
     cart_products: Vec<AddToCart>,
     fetch_products_error: Option<Error>,
@@ -121,12 +122,9 @@ impl Component for Home {
         let products: Vec<_> = self.state.products.iter().map(|product| { 
             let id = product.id;
             html! {
-                <div>
-                    <img src={product.image.clone()}/>
-                    <div>{product.name.clone()}</div>
-                    <div>{"$"}{product.price}</div>
-                    <button onclick=self._link.callback(move |_| Msg::AddToCart(id))>{"Add to Cart"}</button>
-                </div>
+                <Featured product={product.clone()} on_add_to_cart=self._link.callback(move |_| 
+                    Msg::AddToCart(id)
+                )/>
             }
         }).collect();
 
@@ -172,29 +170,29 @@ impl Component for Home {
                 <section class="featured section" id="featured">
                     <h2 class="section-title">{"FEATURED"}</h2>
                     <div class="featured__container bd-grid">
-                        <article class="sneaker">
-                            <div class="sneaker__sale">{"Sale"}</div>
-                            <img src="assets/img/featured1.png" alt="" class="sneaker__img"/>
-                            <span class="sneaker__name">{"Nike Jordan"}</span>
-                            <span class="sneaker__preci">{"$149.99"}</span>
-                            <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
-                        </article>
+                        // <article class="sneaker">
+                        //     <div class="sneaker__sale">{"Sale"}</div>
+                        //     <img src="assets/img/featured1.png" alt="" class="sneaker__img"/>
+                        //     <span class="sneaker__name">{"Nike Jordan"}</span>
+                        //     <span class="sneaker__preci">{"$149.99"}</span>
+                        //     <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                        // </article>
+                        {products}
+                        // <article class="sneaker">
+                        //     <div class="sneaker__sale">{"Sale"}</div>
+                        //     <img src="assets/img/featured2.png" alt="" class="sneaker__img"/>
+                        //     <span class="sneaker__name">{"Nike Free RN"}</span>
+                        //     <span class="sneaker__preci">{"$149.99"}</span>
+                        //     <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                        // </article>
 
-                        <article class="sneaker">
-                            <div class="sneaker__sale">{"Sale"}</div>
-                            <img src="assets/img/featured2.png" alt="" class="sneaker__img"/>
-                            <span class="sneaker__name">{"Nike Free RN"}</span>
-                            <span class="sneaker__preci">{"$149.99"}</span>
-                            <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
-                        </article>
-
-                        <article class="sneaker">
-                            <div class="sneaker__sale">{"Sale"}</div>
-                            <img src="assets/img/featured3.png" alt="" class="sneaker__img"/>
-                            <span class="sneaker__name">{"Nike Free RN"}</span>
-                            <span class="sneaker__preci">{"$149.99"}</span>
-                            <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
-                        </article>
+                        // <article class="sneaker">
+                        //     <div class="sneaker__sale">{"Sale"}</div>
+                        //     <img src="assets/img/featured3.png" alt="" class="sneaker__img"/>
+                        //     <span class="sneaker__name">{"Nike Free RN"}</span>
+                        //     <span class="sneaker__preci">{"$149.99"}</span>
+                        //     <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                        // </article>
                     </div>
                 </section>
                 <section class="collection section">
