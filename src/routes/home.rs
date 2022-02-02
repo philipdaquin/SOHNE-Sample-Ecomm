@@ -158,16 +158,15 @@ impl Component for Home {
                 <section class="home" id="home">
                     <div class="home__container  bd-grid">
                         <div class="home__sneaker">
-                            <div class="home__shape">
-                                <img src="assets/img/imghome.png" alt="" class="home__img"/>
-                            </div>
-                            <div class="home__data">
-                                <span class="home__new">{"New in"}</span>
-                                <h1 class="home__title">{"YEEZY BOOST "}<br/>{" SPLY - 350"}</h1>
-                                <p class="home__description">{"Explore the new collections of sneakers"}</p>
-                                <a href="#" class="button">{"Explore Now"}</a>
-                            </div>
+                            <div class="home__shape"></div>
+                            <img src="assets/img/imghome.png" alt="" class="home__img"/>
                         </div>
+                        <div class="home__data">
+                            <span class="home__new">{"New in"}</span>
+                            <h1 class="home__title">{"YEEZY BOOST "}<br/>{" SPLY - 350"}</h1>
+                            <p class="home__description">{"Explore the new collections of sneakers"}</p>
+                            <a href="#" class="button">{"Explore Now"}</a>
+                        </div>                    
                     </div>
                 </section>
                 <section class="featured section" id="featured">
@@ -224,7 +223,7 @@ impl Component for Home {
                                 <p class="collection__description">{"New Collection 2020"}</p>
                                 <a href="#" class="button-light">{"Buy Now"}<i class="bx bx-right-arrow-alt button-icon"></i></a>
                             </div>
-                            <img src="assets/img/collection1.png" alt="" class="collection__img"/>
+                            <img src="assets/img/imghome.png" alt="" class="collection__img"/>
                         </div>
                     </div>
                 </section>
