@@ -219,11 +219,19 @@ impl Component for Home {
 
                         <div class="collection__card">
                             <div class="collection__data">
-                                <h3 class="collection__name">{"Name"}</h3>
+                                <h3 class="collection__name">{"Airforce 1s"}</h3>
                                 <p class="collection__description">{"New Collection 2020"}</p>
                                 <a href="#" class="button-light">{"Buy Now"}<i class="bx bx-right-arrow-alt button-icon"></i></a>
                             </div>
-                            <img src="assets/img/imghome.png" alt="" class="collection__img"/>
+                            <img src="assets/img/collection3.png" alt="" class="collection__img"/>
+                        </div>
+                        <div class="collection__card">
+                            <div class="collection__data">
+                                <h3 class="collection__name">{"Nike Airforce"}</h3>
+                                <p class="collection__description">{"New Collection 2020"}</p>
+                                <a href="#" class="button-light">{"Buy Now"}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                            </div>
+                            <img src="assets/img/collection4.png" alt="" class="collection__img"/>
                         </div>
                     </div>
                 </section>
@@ -267,6 +275,57 @@ impl Component for Home {
                             <a href="#" class="button">{"Shop Now"}</a>
                         </div>
                         <img src="assets/img/offert.png" alt="" class="offer__img"/>            
+                    </div>
+                </section>
+                <section class="new section" id="new">
+                    <h2 class="section-title">{"NEW COLLECTION"}</h2>
+                    <div class="new__container bd-grid">
+                        <div class="new__mens">
+                            <img src="assets/img/new1.png" alt="" class="new__mens-img"/>
+                            <h3 class="new__title">{"Mens Shoes"}</h3>
+                            <span class="new__preci">{"From 179.99"}</span>
+                            <a href="#" class="button-light">{"View Collection "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
+                        </div>
+                        <div class="new__sneaker">
+                            <div class="new__sneaker-card">
+                                <img src="assets/img/new2.png" alt="" class="new__sneaker-img"/>
+                                <div class="new__sneaker-overlay">
+                                    <a href="#" class="button">{"Add to Cart"}</a>
+                                </div>
+                            </div>
+
+                            <div class="new__sneaker-card">
+                                <img src="assets/img/new3.png" alt="" class="new__sneaker-img"/>
+                                <div class="new__sneaker-overlay">
+                                    <a href="#" class="button">{"Add to Cart"}</a>
+                                </div>
+                            </div>
+                            <div class="new__sneaker-card">
+                                <img src="assets/img/new4.png" alt="" class="new__sneaker-img"/>
+                                <div class="new__sneaker-overlay">
+                                    <a href="#" class="button">{"Add to Cart"}</a>
+                                </div>
+                            </div>
+                            
+                            <div class="new__sneaker-card">
+                                <img src="assets/img/new5.png" alt="" class="new__sneaker-img"/>
+                                <div class="new__sneaker-overlay">
+                                    <a href="#" class="button">{"Add to Cart"}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <section class="newsletter section">
+                    <div class="newsletter__container bd-grid">
+                        <div>
+                            <h3 class="newletter__title">{"Subscriber And Get"} <br/> {"10% OFF"}</h3>
+                            <p class="newsletter__description">{"Get 10% discount for all products"}</p>
+                        </div>
+                        <form action="" class="newsletter_subscribe">
+                            <input type="text" placeholder="@email.com" class="newsletter_input"/>
+                            <a href="#" class="button">{"Subscribe"}</a>
+                        </form>
                     </div>
                 </section>
 
