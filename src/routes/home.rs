@@ -177,7 +177,7 @@ impl Component for Home {
                         //     <span class="sneaker__preci">{"$149.99"}</span>
                         //     <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
                         // </article>
-                        {products}
+                        
                         // <article class="sneaker">
                         //     <div class="sneaker__sale">{"Sale"}</div>
                         //     <img src="assets/img/featured2.png" alt="" class="sneaker__img"/>
@@ -193,6 +193,7 @@ impl Component for Home {
                         //     <span class="sneaker__preci">{"$149.99"}</span>
                         //     <a href="" class="button-light">{"Add to Cart "}<i class="bx bx-right-arrow-alt button-icon"></i></a>
                         // </article>
+                        {products}
                     </div>
                 </section>
                 <section class="collection section">
